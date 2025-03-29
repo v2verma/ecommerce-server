@@ -11,35 +11,44 @@ const productSchema = new Schema({
   description: {
     type: String,
     trim: true,
+    default: ''
   },
   price: {
     type: mongoose.Types.Decimal128,
-    required: true
+    required: true,
+    default: 0
   },
   stockQuantity: {
-    type: Number
+    type: Number,
+    default: 1
   },
-  img: {
-    type: String
+  imgURL: {
+    type: String,
+    default: ''
   },
   category: {
-    type: String
+    type: String,
+    default: ''
   },
   rating: {
-    type: mongoose.Types.Decimal128
+    type: mongoose.Types.Decimal128,
+    default: 0
   },
   stockType: {
-    type: String
+    type: String,
+    default: ''
   },
   brand: {
     type: String,
-    required: true
+    required: true,
+    default: ''
   },
   popularity: {
-    type: Number
+    type: Number,
+    default: 0
   },
 }, { timestamps: true });
 
-const product = mongoose.model('products', productSchema);
+const Product = mongoose.model('Product', productSchema);
 
-export default product;
+export default Product;
