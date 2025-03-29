@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "A nodejs with express based service for ecommerce portal.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
+    "start": "nodemon ./index",
+    "dev": "env-cmd -f ./config/dev.env nodemon --es-module-specifier-resolution=node src/index",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
